@@ -28,7 +28,7 @@ $(DIR_BUILD)/chess1.o: $(DIR_SRC)/chess1.cpp
 run: all
 	$(DIR_BIN)/main
 test:
-	$(DIR_BIN)/testing 1> /dev/null
+	$(DIR_BIN)/testing 
 
 
 
