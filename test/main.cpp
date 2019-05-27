@@ -20,6 +20,13 @@ int result=MoveCheck(0,i1,i2,j1,j2,pole);
 int expected=1;
 REQUIRE(expected==result);
 }
+TEST_CASE() //W_Horse left
+{
+    int i1 = 7, j1 = 2, i2 = 5, j2 = 3;
+    int result = MoveCheck(0, i1, i2, j1, j2, pole);
+    int expected = 1;
+    REQUIRE(expected==result);
+}
 TEST_CASE()
 {int i1=6,j1=4,i2=5,j2=5;
 pole[5][5]='r';
@@ -27,5 +34,32 @@ int result=MoveCheck(0,i1,i2,j1,j2,pole);
 int expected=1;
 pole[5][5]=' ';
 REQUIRE(expected==result);
+}
+TEST_CASE() //W_Bishop right
+{
+    pole[6][5] = ' ';
+    int i1 = 7, j1 = 6, i2 = 5, j2 = 4;
+    int result = MoveCheck(0, i1, i2, j1, j2, pole);
+    int expected = 1;
+    pole[6][5] = 'P';
+    REQUIRE(expected==result);
+}
+TEST_CASE() //W_Queen
+{
+    pole[6][4] = ' ';
+    int i1 = 7, j1 = 4, i2 = 5, j2 = 4;
+    int result = MoveCheck(0, i1, i2, j1, j2, pole);
+    int expected = 1;
+    pole[6][4] = 'P';
+     REQUIRE(expected==result);
+}
+TEST_CASE() //W_King, Correct_K
+{
+    pole[6][5] = ' ';
+    int i1 = 7, j1 = 5, i2 = 6, j2 = 5;
+    int result = MoveCheck(0, i1, i2, j1, j2, pole);
+    int expected = 1;
+    pole[6][5] = 'P';
+         REQUIRE(expected==result);
 }
 
